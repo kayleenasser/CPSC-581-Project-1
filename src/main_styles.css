@@ -1,0 +1,65 @@
+@font-face {
+    font-family: HowdyLemon;
+    src: url('../assets/fonts/HowdyLemon.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    font-family: HowdyLemon;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 25px;
+  }
+
+  .column {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    flex: 20%;
+    margin: 5px;
+  }
+
+  header {
+    background-color:#fe7bac;
+    text-align: center;
+    padding: 2px;
+    font-size: 25px;
+    color: white;
+  }
+
+  footer {
+    background-color: #fe7bac;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  button {
+    background-color: #d9437a; 
+    border: none;
+    color: white;
+    min-width: 300px;
+    padding: 16px 32px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #ff87b9; 
+  }

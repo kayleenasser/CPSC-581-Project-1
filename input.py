@@ -3,7 +3,7 @@ import json
 path = 'src\data.json'
 book = {}
 entry = {}
-stats = ['display name','fact','opinion','percent','image']
+stats = ['fact','opinion','percent','image']
 
 def editdata():
     print('edit kaylees data')

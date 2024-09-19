@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Kaylee's Love Meter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="main_styles.css">
+    <head>
+		<title>Kaylee's Love Meter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="main_styles.css">
 		<link rel="stylesheet" href="image_styles.css">
-  </head>
+    </head>
 	<body>
-			<header>
-					<h2>Kaylee's Love Meter</h2>
-			</header>
-			<div class="main-container">
-				<div class="row">
-					<div class="column">
-						<div class="image-content">
-							<img src="..\assets\kaylee_doodle.png" alt="kaylee doodle" class="picture">
-						</div>
-					</div>
-					<div class="column">
-						<div class="heart">
-							<img src="..\assets\heart.png" alt="heart" class="picture">
-							<div class="precent" id="precent" style="display: none;">100%</div>
-						</div>
-					</div>
-					<div class="column">
-						<div class="image-content">
-							<img src="..\assets\jazzy.jpg" alt="jazzy" class="picture">
-						</div>
+		<header>
+			<h2>Kaylee's Love Meter</h2>
+		</header>
+		<div class="main-container">
+			<div class="row">
+				<div class="column">
+					<div class="image-content">
+						<img src="..\assets\kaylee_doodle.png" alt="kaylee doodle" class="picture">
 					</div>
 				</div>
-				<div class="row">
-					<div class="column">
-						<button id="like" onclick="ToggleButtons()">kaylee likes</button>
-					</div>
-					<div class="column">
-						<button id="next" onclick="ToggleButtons()" style="display: none;">next</button>
-					</div>						
-					<div class="column">
-						<button id="dislike" onclick="ToggleButtons()">kaylee dislikes</button>
+				<div class="column">
+					<div class="heart">
+						<img src="..\assets\heart.png" alt="heart" class="picture">
+						<div class="precent" id="precent" style="display: none;">100%</div>
 					</div>
 				</div>
+				<div class="column">
+					<div class="image-content">
+						<img src="..\assets\jazzy.jpg" alt="jazzy" class="picture">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<button id="like" onclick="ToggleButtons()">kaylee likes</button>
+				</div>
+				<div class="column">
+					<button id="next" onclick="ToggleButtons()" style="display: none;">next</button>
+				</div>						
+				<div class="column">
+					<button id="dislike" onclick="ToggleButtons()">kaylee dislikes</button>
+				</div>
+			</div>
 		</div>
 		<footer>
 			<div></div>
@@ -64,6 +64,6 @@
 					precent.style.display = "none";
 				}
 			}
-			</script>
-</body>
+		</script>
+	</body>
 </html>

@@ -1,2 +1,7 @@
-# CPSC-581-Project-1
-Group project 1 for CPSC 581 at U of C
+# Kaylee's Love Meter
+## CPSC 581 Group Project One
+
+Have you ever wanted to get to know Kaylee? Now you can without even talking to her!
+Presenting "Kaylee's Love Meter"
+
+Figure out Kaylee's likes and dislikes with a click of a button!!!!

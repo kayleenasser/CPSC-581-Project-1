@@ -1,4 +1,40 @@
 {
+    "Ottawa Senators":{
+       "fact":"The original Sens were founded in 1883 but when under in 1934 and didn't exist again until 1992.",
+       "opinion":"I don't think I've ever felt more neutral about a sports franchise....",
+       "percent":"50",
+       "image":"../assets/sens.png"
+    },
+    "Daisy":{
+       "fact":"She almost a year old, and already 3ft long! She will get to be about 5ft!",
+       "opinion":"I love Daisy so much! She is my favourite little noodle :)",
+       "percent":"100",
+       "image":"../assets/daisy.png"
+    },
+    "Dylan":{
+       "fact":"He is terrified of most bugs (he is 6'4\", +200lbs)",
+       "opinion":"He is my lover!! One of my favourite people on the planet :D",
+       "percent":"100",
+       "image":"../assets/dylan.png"
+    },
+    "Diet Drinks":{
+       "fact":"A can of normal coke sinks in water, but diet coke will actually float since its less dense!",
+       "opinion":"I despise the taste of diet/zero calorie things... but i understand their use for others.",
+       "percent":"15",
+       "image":"../assets/dietdrink.png"
+    },
+    "Ceiling Fan":{
+       "fact":"If they're installed correctly they should be on the ceiling!",
+       "opinion":"I don't trust them not to kill me in cartoonish fashion, but they keep me cool...",
+       "percent":"52",
+       "image":"../assets/ceilingfan.png"
+    },
+    "Wet Socks":{
+       "fact":"squelch...",
+       "opinion":"yucky gross worse than dry socks",
+       "percent":"0",
+       "image":"../assets/wetsocks.png"
+    },
     "Socks":{
        "fact":"The earliest known socks date back 1500 years!!",
        "opinion":"I hate socks. They make my feet feel weird and gross >:(",

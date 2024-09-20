@@ -1,16 +1,26 @@
 {
-    "Jazzy":
-      {
-        "fact": "This is my cat! She's a weird little beast!",
-        "opinion": "Jazzy is one of my favourite things in the entire world :)",
-        "percent": "100%",
-        "image": "..\\assets\\jazzy.jpg"
-      },
-      "Bananas":
-      {
-        "fact": "Bananas are actually big herbs, not trees!",
-        "opinion": "I HATE BANANAS!! There isn't any other food I am so repulsed by.",
-        "percent": "0%",
-        "image": "..\\assets\\banana.jpg"
-      }
-}
+    "Socks":{
+       "fact":"The earliest known socks date back 1500 years!!",
+       "opinion":"I hate socks. They make my feet feel weird and gross >:(",
+       "percent":"10",
+       "image":"../assets/socks.png"
+    },
+    "Nuts":{
+       "fact":"Peanuts are not the same as tree nuts, they are legumes.",
+       "opinion":"I am sad I cannot eat delicious lebanese treats due to the presence of nuts and my allergies :(",
+       "percent":"40",
+       "image":"../assets/nuts.png"
+    },
+    "Jazzy":{
+       "fact":"This is my cat! She's a weird little beast!",
+       "opinion":"Jazzy is one of my favourite things in the entire world :)",
+       "percent":"100%",
+       "image":"../assets/jazzy.png"
+    },
+    "Bananas":{
+       "fact":"Bananas are actually big herbs, not trees!",
+       "opinion":"I HATE BANANAS!! There isn't any other food I am so repulsed by.",
+       "percent":"0%",
+       "image":"../assets/banana.png"
+    }
+ }

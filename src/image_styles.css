@@ -1,6 +1,6 @@
 .image-content {
-	width: 375px;
-	max-width: 425px;
+	width: 80%;
+	max-width: 375px;
 	background-color:#fe7bac;
 	box-shadow: 0 2px 4px rgba(41, 26, 26, 0.1);
 	border-radius: 16px;

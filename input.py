@@ -17,7 +17,7 @@ def editdata():
             for each in stats:
                 answer = input('Enter '+each+': ')
                 entry.update({each:answer})
-            book.update({item:entry})
+                book.update({item:entry})
         elif item in book:
             print('Entry found: ', item)
             for each in book[item]:

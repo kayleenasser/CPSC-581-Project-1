@@ -21,7 +21,7 @@
 				<div class="column">
 					<div class="heart">
 						<img src="..\assets\heart.png" alt="heart" class="picture">
-						<div class="precent" id="precent" style="display: none;">100%</div>
+						<div class="precent" id="precent" style="display: none;">100</div>
 					</div>
 				</div>
 				<div class="column">
@@ -57,12 +57,26 @@
 					dislike.style.display = "none";
 					next.style.display = "block";
 					precent.style.display = "block";
+					AnimatePrecentChange();
 				} else {
 					like.style.display = "block";
 					dislike.style.display = "block";
 					next.style.display = "none";
 					precent.style.display = "none";
 				}
+			}
+
+			function AnimatePrecentChange() {
+				var precent = document.getElementById("precent");
+				var target = precent.innerHTML;
+				target = target.replace(/[^a-zA-Z0-9 ]/g, ""); // Remove % if exists for next reset
+				var starting_precent = 0;
+				var interval = setInterval(function() {
+					if (starting_precent >= target)
+						clearInterval(interval);				
+					precent.innerHTML = starting_precent + "%";
+					starting_precent++;
+				}, 15);
 			}
 		</script>
 	</body>

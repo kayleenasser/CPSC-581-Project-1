@@ -11,12 +11,14 @@ function ToggleButtons() {
         next.style.display = "block";
         precent.style.display = "block";
         AnimatePrecentChange();
+
     } else {
         like.style.display = "block";
         dislike.style.display = "block";
         prompt.style.display = "block";
         next.style.display = "none";
         precent.style.display = "none";
+        ShowNextImage();
     }
 }
 
@@ -47,18 +49,22 @@ fetch('data.json')
 function displayCurrentItem(){
     if (currentIndex < items.length) {
         const item = items[currentIndex];
+        print(item);
         document.getElementById("item-name").innerText = item.name;
-        document.getElementById("item-fact").innerText = item.fact;
-        document.getElementById("item-opinion").innerText = item.opinion;
-        document.getElementById("item-image").src = item.image;
+        //document.getElementById("item-fact").innerText = item.fact;
+        //document.getElementById("item-opinion").innerText = item.opinion;
+        document.getElementById("item-image").src = "../assets/socks.png";
     }
 }
 
-document.getElementById("next").onclick = function() {
+function ShowNextImage(){
     currentIndex++;
     if (currentIndex < items.length) {
         displayCurrentItem();
+        document.getElementById("next").style.display = "none"; 
+        document.getElementById("precent").style.display = "none";
+        ToggleButtons(); 
     } else {
         alert("No more items!");
     }
-};
+}

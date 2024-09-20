@@ -1,18 +1,16 @@
 {
-    "kaylee":[
+    "Jazzy":
       {
-        "object": "Jazzy",
         "fact": "This is my cat! She's a weird little beast!",
         "opinion": "Jazzy is one of my favourite things in the entire world :)",
         "percent": "100%",
         "image": "..\\assets\\jazzy.jpg"
       },
+      "Bananas":
       {
-        "object": "Bananas",
         "fact": "Bananas are actually big herbs, not trees!",
         "opinion": "I HATE BANANAS!! There isn't any other food I am so repulsed by.",
         "percent": "0%",
         "image": "..\\assets\\banana.jpg"
       }
-    ]
 }

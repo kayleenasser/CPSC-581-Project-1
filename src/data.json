@@ -1,4 +1,34 @@
 {
+    "Trains":{
+       "fact":"Trains are the biggest users of rail networks... this may shock you.",
+       "opinion":"I love trains, I love not having to drive, I want more public transit!!!",
+       "percent":"90",
+       "image":"../assets/train.png"
+    },
+    "Sushi":{
+       "fact":"Sushi was once accepted at currency in 8th century Japan!",
+       "opinion":"I loveee sushi, one of my favourite foods hehehe",
+       "percent":"98",
+       "image":"../assets/sushi.png"
+    },
+    "Pokemon":{
+       "fact":"Mr Mime is probably just a dude trying to avoid responsibilities...",
+       "opinion":"Currently I play a lot of pokemon go, and I used to play pokemon platium on my DS!",
+       "percent":"70",
+       "image":"../assets/pokemon.png"
+    },
+    "Dirt":{
+       "fact":"Dirt is made up of so many things! Minerals, air, water, living and dead material!",
+       "opinion":"I think dirt is one of the building blocks of life. Big fan.",
+       "percent":"80",
+       "image":"../assets/dirt.png"
+    },
+    "Calgary Flames":{
+       "fact":"The franchise was originally located in Atlanta where they were called the Atlanta Flames!",
+       "opinion":"My favourite hockey team! Love cheering for them every year!",
+       "percent":"92",
+       "image":"../assets/flames.png"
+    },
     "Ottawa Senators":{
        "fact":"The original Sens were founded in 1883 but when under in 1934 and didn't exist again until 1992.",
        "opinion":"I don't think I've ever felt more neutral about a sports franchise....",

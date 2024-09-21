@@ -78,7 +78,7 @@
 
 
   .left-chat-bubble{
-    display: inline-block;
+    display: block;
     background-color: #ff87b9;
     box-shadow: 0 2px 4px rgba(41, 26, 26, 0.1);
     color:white;

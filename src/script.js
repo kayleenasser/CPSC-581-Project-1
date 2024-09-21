@@ -108,6 +108,7 @@ var dislike = document.getElementById("dislike");
 var next = document.getElementById("next");
 var percent = document.getElementById("percent");
 var prompt = document.getElementById("prompt");
+var item = document.getElementById("name");
 var fact = document.getElementById("fact");
 var opinion = document.getElementById("opinion");
 var image = document.getElementById("image");
@@ -142,6 +143,7 @@ function updateDisplay() {
         console.error('Data array is empty.');
         return;
     }
+    item.innerText = randomKey;
     fact.innerText = selectedItem.fact; 
     opinion.innerText = selectedItem.opinion;
     percent.innerText = selectedItem.percent + "%";

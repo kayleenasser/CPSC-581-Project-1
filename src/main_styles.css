@@ -85,10 +85,9 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    margin-top: 75px;
+    margin-top: 60px;
     margin-bottom: 25px;
   }
-
 
   .left-chat-bubble{
     display: block;
@@ -104,4 +103,11 @@
     border-radius:20px;
     width: 800px;
     max-width:800px;
+   }
+
+   figcaption {
+    font-size: medium;
+    color: #ff87b9;
+    text-align: center;
+    margin: 3px;
    }

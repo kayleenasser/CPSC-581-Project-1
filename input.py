@@ -1,31 +1,35 @@
 import json
 
-path = 'src\data.json'
-book = {}
-entry = {}
-stats = ['fact','opinion','percent','image']
+path = 'src/data.json'
+stats = ['fact', 'opinion', 'percent', 'image']
 
-print('welcome kaylee data inputter!')
+print('Welcome to Kaylee data inputter!')
+
 while True:
-    book = {}
+    entry = {}
     item = input('Enter item: ')
+    
     if item == '':
         command = input('Close data editor? (Y/N): ')
-        if (command.lower() == 'y' or command.lower()=='yes'):
+        if command.lower() == 'y' or command.lower() == 'yes':
             break
+    
+    entry['name'] = item  
     for stat in stats:
-        answer = input('Enter '+ stat +': ')
+        answer = input(f'Enter {stat}: ')
         if stat == 'image':
-            answer = r"../assets/" +answer+'.png'
-        entry.update({stat:answer})
-    book.update({item:entry})
+            answer = f"../assets/{answer}.png"  
+        entry[stat] = answer
+    
     with open(path, 'r') as infile:
         try:
-            old = json.load(infile)
-        except:
-            continue
-        book.update(old)
-    
-    with open(path,"w") as f:
-        json.dump(book,f)
+            old_data = json.load(infile)  
+        except json.JSONDecodeError:
+            old_data = [] 
 
+    old_data.append(entry)
+    
+    with open(path, 'w') as f:
+        json.dump(old_data, f, indent=4) 
+
+print('Data entry completed!')

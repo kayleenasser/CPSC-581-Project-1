@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<title>Kaylee's Love Guesser</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="main_styles.css">
-		<link rel="stylesheet" href="image_styles.css">
+        <title>Kaylee's Love Guesser</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="main_styles.css">
+        <link rel="stylesheet" href="image_styles.css">
     </head>
-	<body>
-		<header>
-			<h2>Kaylee's Love Guesser</h2>
-		</header>
-		<div class="main-container">
-			<div class="row">
-				<div class="column">
-					<div class="image-content">
-						<img src="../assets/kaylee.png" alt="kaylee doodle" class="picture">
-					</div>
-				</div>
-				<div class="column">
-					<div class="heart">
-						<img src="../assets/heart.png" alt="heart" class="picture">
-						<div class="prompt" id="prompt">What does Kaylee think?</div>
-						<div class="precent" id="precent" style="display: none;">100</div>
-					</div>
-				</div>
-				<div class="column">
-					<div class="image-content">
-						<img id="item-image" src="../assets/jazzy.png" alt="jazzy" class="picture">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="left-chat-bubble" id="item-fact">
-				  <p>this is the beast, jazzy!</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column">
-					<button id="like" onclick="ToggleButtons()">kaylee likes</button>
-				</div>
-				<div class="column">
-					<button id="next" onclick="ToggleButtons()" style="display: none;">next</button>
-				</div>						
-				<div class="column">
-					<button id="dislike" onclick="ToggleButtons()">kaylee dislikes</button>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<div></div>
-		</footer>
-		<script src="script.js"></script>
-	</body>
+    <body>
+        <header>
+            <h2>Kaylee's Love Guesser</h2>
+        </header>
+        <div class="main-container">
+            <div class="row">
+                <div class="column">
+                    <div class="image-content">
+                        <img src="../assets/kaylee.png" alt="kaylee doodle" class="picture">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="heart">
+                        <img src="../assets/heart.png" alt="heart" class="picture">
+                        <div class="prompt" id="prompt">What does Kaylee think?</div>
+                        <div class="precent" id="precent" style="display: none;">100</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="image-content">
+                        <img id="item-image" src="" alt="Item image" class="picture">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left-chat-bubble">
+                    <h3 id="item-name"></h3> 
+                    <p id="item-fact"></p> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <button id="like">Kaylee likes</button>
+                </div>
+                <div class="column">
+                    <button id="next" style="display: none;">Next</button>
+                </div>						
+                <div class="column">
+                    <button id="dislike">Kaylee dislikes</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div></div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
 </html>

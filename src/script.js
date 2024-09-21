@@ -1,9 +1,36 @@
+let items = [];  
+let currentIndex = 0;  
+let isFactDisplayed = true;  
+
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        items = data;
+        displayCurrentItem();  
+    })
+    .catch(error => console.error('Error loading items:', error));
+
+function displayCurrentItem() {
+    if (currentIndex < items.length) {
+        const item = items[currentIndex];
+        document.getElementById("item-name").innerText = item.name;
+        document.getElementById("item-fact").innerText = item.fact; 
+        document.getElementById("item-image").src = item.image;
+        document.getElementById("precent").innerText = item.percent + "%";
+
+        isFactDisplayed = true;  
+    } else {
+        alert("No more items!");
+    }
+}
+
 function ToggleButtons() {
-    var like = document.getElementById("like");
-    var dislike = document.getElementById("dislike");
-    var next = document.getElementById("next");
-    var precent = document.getElementById("precent");
-    var prompt = document.getElementById("prompt");
+    const like = document.getElementById("like");
+    const dislike = document.getElementById("dislike");
+    const next = document.getElementById("next");
+    const precent = document.getElementById("precent");
+    const prompt = document.getElementById("prompt");
+
     if (next.style.display === "none") {
         like.style.display = "none";
         dislike.style.display = "none";
@@ -11,14 +38,15 @@ function ToggleButtons() {
         next.style.display = "block";
         precent.style.display = "block";
         AnimatePrecentChange();
-
     } else {
         like.style.display = "block";
         dislike.style.display = "block";
         prompt.style.display = "block";
         next.style.display = "none";
         precent.style.display = "none";
-        ShowNextImage();
+        
+        currentIndex++;
+        displayCurrentItem();
     }
 }
 
@@ -35,36 +63,23 @@ function AnimatePrecentChange() {
     }, 15);
 }
 
-let items = [];
-let currentIndex = 0;
-
-fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-        items = data;
-        displayCurrentItem();
-    })
-    .catch(error => console.error('Error loading items:', error));
-
-function displayCurrentItem(){
-    if (currentIndex < items.length) {
+function showOpinion() {
+    if (isFactDisplayed) {
         const item = items[currentIndex];
-        print(item);
-        document.getElementById("item-name").innerText = item.name;
-        //document.getElementById("item-fact").innerText = item.fact;
-        //document.getElementById("item-opinion").innerText = item.opinion;
-        document.getElementById("item-image").src = "../assets/socks.png";
+        document.getElementById("item-fact").innerText = item.opinion; 
+        isFactDisplayed = false;  
     }
+
+    ToggleButtons();
 }
 
-function ShowNextImage(){
-    currentIndex++;
-    if (currentIndex < items.length) {
-        displayCurrentItem();
-        document.getElementById("next").style.display = "none"; 
-        document.getElementById("precent").style.display = "none";
-        ToggleButtons(); 
+document.getElementById("next").addEventListener('click', function() {
+    if (currentIndex < items.length - 1) {
+        ToggleButtons();  
     } else {
-        alert("No more items!");
+        alert("No more items!");  
     }
-}
+});
+
+document.getElementById("like").addEventListener('click', showOpinion);
+document.getElementById("dislike").addEventListener('click', showOpinion);

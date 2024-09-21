@@ -14,7 +14,7 @@ while True:
         if command.lower() == 'y' or command.lower() == 'yes':
             break
     
-    entry['name'] = item  
+    entry['name'] = item 
     for stat in stats:
         answer = input(f'Enter {stat}: ')
         if stat == 'image':
@@ -25,11 +25,11 @@ while True:
         try:
             old_data = json.load(infile)  
         except json.JSONDecodeError:
-            old_data = [] 
+            old_data = []  
 
     old_data.append(entry)
     
     with open(path, 'w') as f:
-        json.dump(old_data, f, indent=4) 
+        json.dump(old_data, f, indent=4)  
 
 print('Data entry completed!')

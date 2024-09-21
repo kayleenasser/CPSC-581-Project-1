@@ -76,6 +76,14 @@
     transform: translateY(4px);
   }
 
+  .chat-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 75px;
+    margin-bottom: 25px;
+  }
+
 
   .left-chat-bubble{
     display: block;
@@ -84,6 +92,7 @@
     color:white;
     margin-top: -60px;
     text-align: center;
+    align-content: center;
     padding:10px;
     border-radius:20px;
     width: 800px;

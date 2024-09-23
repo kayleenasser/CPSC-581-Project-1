@@ -92,17 +92,18 @@ const data = {
     "Jazzy": {
         "fact": "This is my cat! She's a weird little beast!",
         "opinion": "Jazzy is one of my favourite things in the entire world :)",
-        "percent": "100%",
+        "percent": "100",
         "image": "../assets/jazzy.png"
     },
     "Bananas": {
         "fact": "Bananas are actually big herbs, not trees!",
         "opinion": "I HATE BANANAS!! There isn't any other food I am so repulsed by.",
-        "percent": "0%",
+        "percent": "0",
         "image": "../assets/banana.png"
     }
 };
 
+let selectedItems = [];
 var like = document.getElementById("like");
 var dislike = document.getElementById("dislike");
 var next = document.getElementById("next");
@@ -115,6 +116,7 @@ var image = document.getElementById("image");
 
 function ToggleButtons() {
     if (next.style.display === "none") {
+        disableButtons();
         like.style.display = "none";
         dislike.style.display = "none";
         prompt.style.display = "none";
@@ -135,7 +137,19 @@ function ToggleButtons() {
     }
 }
 
-let selectedItems = [];
+function disableButtons() {
+    like.disabled = true;
+    dislike.disabled = true;
+    prompt.disabled = true;
+    next.disabled = true;
+}
+
+function enableButtons() {
+    like.disabled = false;
+    dislike.disabled = false;
+    prompt.disabled = false;
+    next.disabled = false;
+}
 
 window.onload = function() {
     updateDisplay();
@@ -170,4 +184,5 @@ function AnimatePercentChange() {
         percent.innerText = starting_percent + "%";
         starting_percent++;
     }, 15);
+    setTimeout(enableButtons, 2000);
 }

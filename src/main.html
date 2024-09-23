@@ -12,6 +12,16 @@
 			<h2>Kaylee's Love Guesser</h2>
 		</header>
 		<div class="main-container">
+			<div id="correct" class="popup">
+				<div id="correct-image" class="popup-content">
+					<img src="../assets/correct.png" alt="correct">
+				</div>
+			</div>
+			<div id="wrong" class="popup">
+				<div id="wrong-image" class="popup-content">
+					<img src="../assets/wrong.png" alt="wrong">
+				</div>
+			</div>
 			<div class="row">
 				<div class="column">
 					<figcaption> Kaylee </figcaption>
@@ -41,13 +51,13 @@
 			</div>
 			<div class="row">
 				<div class="column">
-					<button id="like" onclick="ToggleButtons()">kaylee likes</button>
+					<button id="like" onclick="ToggleButtons(); LikeGuessed();">kaylee likes</button>
 				</div>
 				<div class="column">
-					<button id="next" onclick="ToggleButtons()" style="display: none;">next</button>
+					<button id="next" onclick="ToggleButtons(); ResetAnswersOnNext();" style="display: none;">next</button>
 				</div>						
 				<div class="column">
-					<button id="dislike" onclick="ToggleButtons()">kaylee dislikes</button>
+					<button id="dislike" onclick="ToggleButtons(); DislikeGuessed();">kaylee dislikes</button>
 				</div>
 			</div>
 		</div>

@@ -116,3 +116,30 @@
     text-align: center;
     margin: 3px;
    }
+
+   .popup {
+    display: none;
+    animation: hide 0.5s 0.5s forwards;
+    position: absolute;
+    margin:0 auto;
+    top: 15%;
+    left: 25%;
+    transform: translate(-25%, -25%);
+    scale: 0.6;
+    z-index: 9999;
+}
+  
+  .popup-content {
+    display: none;
+    margin: auto;
+    display: block;
+  }
+
+  @keyframes hide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

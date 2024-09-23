@@ -135,21 +135,26 @@ function ToggleButtons() {
     }
 }
 
+let selectedItems = [];
+
 function updateDisplay() {
     const keys = Object.keys(data);
-    const randomKey = keys[Math.floor(Math.random() * keys.length)];
-    const selectedItem = data[randomKey];
-    if (data.length === 0) {
-        console.error('Data array is empty.');
-        return;
+
+    if (selectedItems.length === keys.length) {
+        console.log("resetting list");
+        selectedItems = [];
     }
+    const availableKeys = keys.filter(key => !selectedItems.includes(key));
+    const randomKey = availableKeys[Math.floor(Math.random() * availableKeys.length)];
+    const selectedItem = data[randomKey];
+    selectedItems.push(randomKey);
+    console.log("selected item:", randomKey, "selected items list:", selectedItems);
     item.innerText = randomKey;
     fact.innerText = selectedItem.fact; 
     opinion.innerText = selectedItem.opinion;
     percent.innerText = selectedItem.percent + "%";
     image.src = selectedItem.image;
 }
-
 function AnimatePercentChange() {
     var target = parseInt(percent.innerText, 10);
     var starting_percent = 0;

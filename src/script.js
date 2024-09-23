@@ -137,6 +137,10 @@ function ToggleButtons() {
 
 let selectedItems = [];
 
+window.onload = function() {
+    updateDisplay();
+  };
+
 function updateDisplay() {
     const keys = Object.keys(data);
 
@@ -155,6 +159,7 @@ function updateDisplay() {
     percent.innerText = selectedItem.percent + "%";
     image.src = selectedItem.image;
 }
+
 function AnimatePercentChange() {
     var target = parseInt(percent.innerText, 10);
     var starting_percent = 0;

@@ -81,6 +81,11 @@
     transform: translateY(4px);
   }
 
+  button:disabled {
+    background-color: #bd597e;
+    color: #ddb4c0;
+  }
+
   .chat-row {
     display: flex;
     flex-flow: row nowrap;

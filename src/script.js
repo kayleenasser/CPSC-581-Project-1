@@ -180,9 +180,9 @@ function AnimatePercentChange() {
     var interval = setInterval(function() {
         if (starting_percent >= target) {
             clearInterval(interval);
+            enableButtons();
         }
         percent.innerText = starting_percent + "%";
         starting_percent++;
     }, 15);
-    setTimeout(enableButtons, 2000);
 }

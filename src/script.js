@@ -105,6 +105,8 @@ const data = {
 
 let selectedItems = [];
 let percentNumber = 0;
+
+var reaction = document.getElementById("reaction");
 var like = document.getElementById("like");
 var dislike = document.getElementById("dislike");
 var next = document.getElementById("next");
@@ -219,4 +221,20 @@ function ResetAnswersOnNext() {
     correct.style.opacity = 1;
     wrong.style.display = "none";
     wrong.style.opacity = 1;
+    reaction.src = "../assets/kaylee/kaylee.png";
+}
+
+function KayleeReaction() {
+    if (percentNumber >= 80) {
+        reaction.src = "../assets/kaylee/lovekaylee.png";
+    } else if (percentNumber <= 15) {
+        reaction.src = "../assets/kaylee/angrykaylee.png";
+    } else if (percentNumber >= 50) {
+        reaction.src = "../assets/kaylee/contentkaylee.png";
+    } else if (percentNumber < 50) {
+        reaction.src = "../assets/kaylee/unsurekaylee.png";
+    } else {
+        reaction.src = "../assets/kaylee/kaylee.png";
+    }
+
 }

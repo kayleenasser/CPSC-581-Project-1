@@ -120,6 +120,10 @@ var wrong = document.getElementById("wrong");
 var wrongimage = document.getElementById("wrong-image");
 var correct = document.getElementById("correct");
 var correctimage = document.getElementById("correct-image");
+var correctSound = document.getElementById("correctSound");
+var wrongSound = document.getElementById("wrongSound");
+
+wrongSound.volume = 0.5;
 
 function ToggleButtons() {
     if (next.style.display === "none") {
@@ -200,9 +204,11 @@ function LikeGuessed() {
     if (percentNumber > 50) {
         correct.style.display = "block";
         correctimage.style.display = "block";
+        correctSound.play();
     } else if (percentNumber < 50) {
         wrong.style.display = "block";
         wrongimage.style.display = "block";
+        wrongSound.play();
     }
 };
 
@@ -210,9 +216,12 @@ function DislikeGuessed() {
     if (percentNumber < 50) {
         correct.style.display = "block";
         correctimage.style.display = "block";
+        correctSound.play();
+
     } else if (percentNumber > 50) {
         wrong.style.display = "block";
         wrongimage.style.display = "block";
+        wrongSound.play();
     }
 };
 

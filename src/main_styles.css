@@ -33,7 +33,6 @@
     flex-flow: column nowrap;
     align-items: center;
     flex: 20%;
-    margin: 5px;
   }
 
   header {
@@ -59,10 +58,12 @@
     background-color: #d9437a; 
     border: none;
     color: white;
-    min-width: 300px;
-    padding: 16px 32px;
+    margin: auto;
+    min-width: 60px;
+    height: 60px;
+    width: 60px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 50%;
     text-decoration: none;
     display: inline-block;
     font-size: 24px;
@@ -72,6 +73,7 @@
   }
   
   button:hover {
+    cursor: pointer;
     background-color: #ff87b9; 
   }
 
@@ -142,4 +144,34 @@
     to {
       opacity: 0;
     }
+  }
+
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 450px;
+    height: 60px;
+    margin: 10px;
+    background-image: linear-gradient(to left, rgb(232, 69, 134) , rgb(255, 220, 105), rgb(37, 150, 80));
+    opacity: 1;
+    border-radius: 60px;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 60px; /* Slider handle height */
+    background: #aa0439; 
+    cursor: pointer; 
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 60px; /* Slider handle height */
+    border-radius: 60px;
+    background: #cc2070; /* Green background */
   }

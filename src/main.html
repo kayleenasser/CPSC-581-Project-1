@@ -49,15 +49,13 @@
 				<div class="left-chat-bubble" id="opinion" style="display: none">
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style="margin-top: -1%;">
 				<div class="column">
-					<button id="like" onclick="ToggleButtons(); LikeGuessed(); KayleeReaction();">kaylee likes</button>
+					<button id="like" onclick="ToggleButtons(); LikeGuessed(); KayleeReaction();">👍</button>
 				</div>
+						<input type="range" min="0" max="100" value="50" class="slider" id="opinion_guesser">					
 				<div class="column">
-					<button id="next" onclick="ToggleButtons(); ResetAnswersOnNext();" style="display: none;">next</button>
-				</div>						
-				<div class="column">
-					<button id="dislike" onclick="ToggleButtons(); DislikeGuessed(); KayleeReaction();">kaylee dislikes</button>
+					<button id="dislike" onclick="ToggleButtons(); DislikeGuessed(); KayleeReaction();">👎</button>
 				</div>
 			</div>
 		</div>

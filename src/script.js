@@ -151,25 +151,23 @@ function ToggleButtons() {
 }
 
 function inflateHeart() {
-    var heartballoon = document.getElementById("heartballoon");
-    var currentScale = heartballoon.style.transform.replace("scale(", "").replace(")", "");
-    currentScale = currentScale ? parseFloat(currentScale) : 1;
-    if (currentScale === 1) {
-        heartballoon.style.transform = "scale(1.1)";
-    } else if (currentScale <= 4) {
-        heartballoon.style.transform = "scale(" + (currentScale + 0.2) + ")";
+    const regex = /heart-(\d+)\.png$/;
+    const match = heartballoon.src.match(regex);
+    var currentHeartIndex = match ? parseInt(match[1], 10) : 1;
+    if (currentHeartIndex < 20) {
+        currentHeartIndex++;
+        heartballoon.src = `../assets/heart-balloon/heart-${currentHeartIndex}.png`;
     }
-    heartballoon.style.transformOrigin = "center center";
 }
 
 function deflateHeart() {
-    var heartballoon = document.getElementById("heartballoon");
-    var currentScale = heartballoon.style.transform.replace("scale(", "").replace(")", "");
-    currentScale = currentScale ? parseFloat(currentScale) : 1;
-    if (currentScale > 0.1) {
-        heartballoon.style.transform = "scale(" + (currentScale - 0.2) + ")";
+    const regex = /heart-(\d+)\.png$/;
+    const match = heartballoon.src.match(regex);
+    var currentHeartIndex = match ? parseInt(match[1], 10) : 1;
+    if (currentHeartIndex > 1) {
+        currentHeartIndex--;
+        heartballoon.src = `../assets/heart-balloon/heart-${currentHeartIndex}.png`;
     }
-    heartballoon.style.transformOrigin = "center center";
 }
 
 function disableButtons() {

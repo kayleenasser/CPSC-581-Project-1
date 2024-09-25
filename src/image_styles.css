@@ -45,10 +45,17 @@
 	max-width: 400px;
 	z-index: 0;
 	opacity: 0.5;
+	top: 15px;
 }
 
 .heart .picture {
-	width: 80%;
+	width: 400px;
+	max-width: 400px;
+	position: relative; 
+	align-self: center;
+    align-content: center;
+    align-items: center;
+	top: -350px;
 }
 
 .percent  {

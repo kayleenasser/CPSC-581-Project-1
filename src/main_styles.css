@@ -48,6 +48,14 @@
     color: white;
   }
 
+  h4 {
+    font-size: 20px;
+    font-family: CarvingSoft;
+    text-align: center;
+    margin-top: -30px;  
+    margin-bottom: 8px;
+  }
+
   footer {
     background-color: #fe7bac;
     padding: 10px;

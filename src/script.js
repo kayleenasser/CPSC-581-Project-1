@@ -105,6 +105,7 @@ const data = {
 
 let selectedItems = [];
 let percentNumber = 0;
+let inflationNumber = 0;
 
 var reaction = document.getElementById("reaction");
 var like = document.getElementById("like");
@@ -149,24 +150,26 @@ function ToggleButtons() {
     }
 }
 
-function inflateHeart(){
-    var currentWidth = heartballoon.style.width;
-    currentWidth = currentWidth.replace("px", "");
-    currentWidth = parseInt(currentWidth, 10);
-    if (currentWidth === "0px") {
-        heartballoon.style.width = "10px";
-    } else if (currentWidth <= 400) {
-        heartballoon.style.width = (currentWidth + 10) + "px";
+function inflateHeart() {
+    var heartballoon = document.getElementById("heartballoon");
+    var currentScale = heartballoon.style.transform.replace("scale(", "").replace(")", "");
+    currentScale = currentScale ? parseFloat(currentScale) : 1;
+    if (currentScale === 1) {
+        heartballoon.style.transform = "scale(1.1)";
+    } else if (currentScale <= 4) {
+        heartballoon.style.transform = "scale(" + (currentScale + 0.2) + ")";
     }
+    heartballoon.style.transformOrigin = "center center";
 }
 
-function deflateHeart(){
-    var currentWidth = heartballoon.style.width;
-    currentWidth = currentWidth.replace("px", "");
-    currentWidth = parseInt(currentWidth, 10);
-    if (currentWidth > 0) {
-        heartballoon.style.width = (currentWidth - 10) + "px";
+function deflateHeart() {
+    var heartballoon = document.getElementById("heartballoon");
+    var currentScale = heartballoon.style.transform.replace("scale(", "").replace(")", "");
+    currentScale = currentScale ? parseFloat(currentScale) : 1;
+    if (currentScale > 0.1) {
+        heartballoon.style.transform = "scale(" + (currentScale - 0.2) + ")";
     }
+    heartballoon.style.transformOrigin = "center center";
 }
 
 function disableButtons() {

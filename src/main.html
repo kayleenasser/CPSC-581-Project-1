@@ -29,12 +29,14 @@
 						<img id="reaction" src="../assets/kaylee/kaylee.png" alt="kaylee doodle" class="picture">
 					</div>
 				</div>
-				<div class="column" style="margin-top: 40px; width: 500px;">
-					<div class="heart" id="heartballoon" style="width: 0px;">
-						<img src="../assets/heart.png" alt="heart" class="picture">
+				<div class="column" style="margin-top: 40px; width: 450px;">
+					<div class="heart" id="heart">
+						<img src="../assets/heart-empty.png" class="underheart" id="empty-heart">
+						<img src="../assets/heart.png" class="picture" alt="heartballoon" id="heartballoon" style="width: 100px; max-width: 400px; position: relative; transform: scale(1); top: -230px;">
 						<div class="prompt" id="prompt">What does Kaylee think?</div>
 						<div class="percent" id="percent" style="display: none;"></div>
 					</div>
+					<div class="percent" id="percent" style="display: none;"></div>
 				</div>
 				<div class="column">
 					<figcaption id="name"></figcaption>
@@ -51,10 +53,10 @@
 			</div>
 			<div class="row" style="margin-top: -1%;">
 				<div class="column">
-					<button id="like" onclick="inflateHeart();">👍</button>
+					<button id="like" onclick="inflateHeart();">inflate the balloon!</button>
 				</div>				
 				<div class="column">
-					<button id="dislike" onclick="deflateHeart()">👎</button>
+					<button id="dislike" onclick="deflateHeart()">deflate the balloon!</button>
 				</div>
 			</div>
 		</div>

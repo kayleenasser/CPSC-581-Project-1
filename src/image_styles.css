@@ -25,13 +25,26 @@
 	max-width: 400px;
 	max-height: 400px;
 	display: block;
-	width: 100%;
-	height: auto;
-	position: relative;
 	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+
+.balloon-heart {
+	position: relative;
+	max-width: 400px; 
+	top: -364px;
+}
+
+.underheart {
+	position: relative;
 	align-self: center;
     align-content: center;
     align-items: center;
+	width: 400px;
+	max-width: 400px;
+	z-index: 0;
+	opacity: 0.5;
 }
 
 .heart .picture {
@@ -52,6 +65,7 @@
 .prompt  {
 	color: white;
 	position: absolute;
+	width: 200px;
 	font-size: calc(1vw + 1.5vh);
 	top: 50%; 
 	left: 50%; 

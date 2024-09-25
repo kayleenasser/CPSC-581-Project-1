@@ -61,10 +61,10 @@
     background-color: #d9437a; 
     border: none;
     color: white;
-    margin: auto;
+    margin: 10px;
     min-width: 60px;
-    height: 60px;
-    width: 60px;
+    height: 90px;
+    width: 400px;
     text-align: center;
     border-radius: 50%;
     text-decoration: none;

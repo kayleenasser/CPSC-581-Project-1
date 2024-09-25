@@ -29,6 +29,9 @@
 	height: auto;
 	position: relative;
 	text-align: center;
+	align-self: center;
+    align-content: center;
+    align-items: center;
 }
 
 .heart .picture {

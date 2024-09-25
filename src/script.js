@@ -122,6 +122,7 @@ var correct = document.getElementById("correct");
 var correctimage = document.getElementById("correct-image");
 var correctSound = document.getElementById("correctSound");
 var wrongSound = document.getElementById("wrongSound");
+var heartballoon = document.getElementById("heartballoon");
 
 wrongSound.volume = 0.5;
 
@@ -145,6 +146,26 @@ function ToggleButtons() {
         percent.style.display = "none";
         opinion.style.display = "none";
         updateDisplay();
+    }
+}
+
+function inflateHeart(){
+    var currentWidth = heartballoon.style.width;
+    currentWidth = currentWidth.replace("px", "");
+    currentWidth = parseInt(currentWidth, 10);
+    if (currentWidth === "0px") {
+        heartballoon.style.width = "10px";
+    } else if (currentWidth <= 400) {
+        heartballoon.style.width = (currentWidth + 10) + "px";
+    }
+}
+
+function deflateHeart(){
+    var currentWidth = heartballoon.style.width;
+    currentWidth = currentWidth.replace("px", "");
+    currentWidth = parseInt(currentWidth, 10);
+    if (currentWidth > 0) {
+        heartballoon.style.width = (currentWidth - 10) + "px";
     }
 }
 

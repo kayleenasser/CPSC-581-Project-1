@@ -29,8 +29,8 @@
 						<img id="reaction" src="../assets/kaylee/kaylee.png" alt="kaylee doodle" class="picture">
 					</div>
 				</div>
-				<div class="column" style="margin-top: 40px;">
-					<div class="heart">
+				<div class="column" style="margin-top: 40px; width: 500px;">
+					<div class="heart" id="heartballoon" style="width: 0px;">
 						<img src="../assets/heart.png" alt="heart" class="picture">
 						<div class="prompt" id="prompt">What does Kaylee think?</div>
 						<div class="percent" id="percent" style="display: none;"></div>
@@ -51,11 +51,10 @@
 			</div>
 			<div class="row" style="margin-top: -1%;">
 				<div class="column">
-					<button id="like" onclick="ToggleButtons(); LikeGuessed(); KayleeReaction();">👍</button>
-				</div>
-						<input type="range" min="0" max="100" value="50" class="slider" id="opinion_guesser">					
+					<button id="like" onclick="inflateHeart();">👍</button>
+				</div>				
 				<div class="column">
-					<button id="dislike" onclick="ToggleButtons(); DislikeGuessed(); KayleeReaction();">👎</button>
+					<button id="dislike" onclick="deflateHeart()">👎</button>
 				</div>
 			</div>
 		</div>

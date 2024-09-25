@@ -108,8 +108,8 @@ let percentNumber = 0;
 let inflationNumber = 0;
 
 var reaction = document.getElementById("reaction");
-var like = document.getElementById("like");
-var dislike = document.getElementById("dislike");
+var inflate = document.getElementById("inflate");
+var deflate = document.getElementById("deflate");
 var next = document.getElementById("next");
 var percent = document.getElementById("percent");
 var prompt = document.getElementById("prompt");
@@ -127,27 +127,55 @@ var heartballoon = document.getElementById("heartballoon");
 
 wrongSound.volume = 0.5;
 
-function ToggleButtons() {
-    if (next.style.display === "none") {
-        disableButtons();
-        like.style.display = "none";
-        dislike.style.display = "none";
-        prompt.style.display = "none";
-        fact.style.display = "none";
-        next.style.display = "block";
-        percent.style.display = "block";
-        opinion.style.display = "block";
-        AnimatePercentChange();
-    } else {
-        like.style.display = "block";
-        dislike.style.display = "block";
-        prompt.style.display = "block";
-        fact.style.display = "block";
-        next.style.display = "none";
-        percent.style.display = "none";
-        opinion.style.display = "none";
+function HeartBalloonButton() {
+    if (inflate.style.display === "inline-block") {
+        inflateHeart();
+    } else if (deflate.style.display === "inline-block") {
+        deflateHeart();
+    } else if (next.style.display === "inline-block" && percent.style.display === "none") {
+        displayResults();
+        KayleeReaction();
+    } else if (next.style.display === "inline-block" && percent.style.display === "block") {
         updateDisplay();
+        ResetAnswersOnNext();
     }
+    else {
+        console.log("HeartBalloonButton error");
+        console.log("inflate:", inflate.style.display, "deflate:", deflate.style.display, "next:", next.style.display, "percent:", percent.style.display);
+    }
+}
+
+function SwitchTools() {
+    if (inflate.style.display === "inline-block") {
+        inflate.style.display = "none";
+        deflate.style.display = "inline-block";
+    } else if (deflate.style.display === "inline-block") {
+        deflate.style.display = "none";
+        next.style.display = "inline-block";
+    } else if (next.style.display === "inline-block") {
+        next.style.display = "none";
+        inflate.style.display = "inline-block";
+    } else {
+        console.log("SwitchTools error");
+    }
+}
+
+function displayResults() { 
+    fullyInflateBalloonAnimation();
+    fact.style.display = "none";
+    opinion.style.display = "block";
+    percent.style.display = "block";
+    AnimatePercentChange();
+}
+
+function fullyInflateBalloonAnimation() {
+    var interval = setInterval(function() {
+        if (inflationNumber > 20) {
+            clearInterval(interval);
+        }
+        inflateHeart();
+        inflationNumber++;
+    }, 50);
 }
 
 function inflateHeart() {
@@ -171,15 +199,14 @@ function deflateHeart() {
 }
 
 function disableButtons() {
-    like.disabled = true;
-    dislike.disabled = true;
-    prompt.disabled = true;
+    inflate.disabled = true;
+    deflate.disabled = true;
     next.disabled = true;
 }
 
 function enableButtons() {
-    like.disabled = false;
-    dislike.disabled = false;
+    inflate.disabled = false;
+    deflate.disabled = false;
     prompt.disabled = false;
     next.disabled = false;
 }
@@ -212,7 +239,7 @@ function AnimatePercentChange() {
     var target = parseInt(percent.innerText, 10);
     var starting_percent = 0;
     var interval = setInterval(function() {
-        if (starting_percent >= target) {
+        if (starting_percent > target) {
             clearInterval(interval);
             enableButtons();
         }
@@ -253,6 +280,7 @@ function ResetAnswersOnNext() {
     wrong.style.display = "none";
     wrong.style.opacity = 1;
     reaction.src = "../assets/kaylee/kaylee.png";
+    percent.style.display = "none";
 }
 
 function KayleeReaction() {
@@ -267,5 +295,4 @@ function KayleeReaction() {
     } else {
         reaction.src = "../assets/kaylee/kaylee.png";
     }
-
 }

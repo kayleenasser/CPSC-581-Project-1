@@ -161,6 +161,20 @@ var heartballoon = document.getElementById("heartballoon");
 
 wrongSound.volume = 0.5;
 
+function typeText(text, elementId, speed = 50) {
+    let i = 0;
+    const element = document.getElementById(elementId); 
+    element.innerHTML = ''; 
+    function typeNextChar() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i); 
+            i++;
+            setTimeout(typeNextChar, speed); 
+        }
+    }
+    typeNextChar(); 
+}
+
 function HeartBalloonButton() {
     if (isRunning) {
         console.log("isRunning is true, returning");
@@ -260,7 +274,7 @@ function updateDisplay() {
     selectedItems.push(randomKey);
     console.log("selected item:", randomKey, "selected items list:", selectedItems);
     item.innerText = randomKey;
-    fact.innerText = selectedItem.fact; 
+    typeText(selectedItem.fact, "fact", 30);
     opinion.innerText = selectedItem.opinion;
     percent.innerText = selectedItem.percent + "%";
     image.src = selectedItem.image;
@@ -341,3 +355,4 @@ function enableButtons() {
     next.disabled = false;
     isRunning = false;
 }
+

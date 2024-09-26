@@ -135,7 +135,6 @@ const data = {
 
 let selectedItems = [];
 let percentNumber = 0;
-let inflationNumber = 0;
 let isRunning = false;
 
 window.onload = function() {
@@ -171,6 +170,7 @@ function HeartBalloonButton() {
     } else if (deflate.style.display === "inline-block") {
         deflateHeart();
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
+        // CheckAnswer(); // Not working yet
         KayleeReaction();
         next.innerText = "click the heart to continue";
         displayResults();
@@ -200,7 +200,7 @@ function SwitchTools() {
 }
 
 function displayResults() { 
-    fullyInflateBalloonAnimation();
+    InflateBalloonToAnswer();
     fact.style.display = "none";
     opinion.style.display = "block";
     percent.style.display = "block";
@@ -208,13 +208,22 @@ function displayResults() {
     AnimatePercentChange();
 }
 
-function fullyInflateBalloonAnimation() {
+function InflateBalloonToAnswer() {
+    var target = Math.round(percentNumber / 5);
+    var regex = /heart-(\d+)\.png$/;
+    var match = heartballoon.src.match(regex);
+    var userHeartIndex = match ? parseInt(match[1], 10) : 1;
     var interval = setInterval(function() {
-        if (inflationNumber > 20) {
+        if (userHeartIndex === target) {
             clearInterval(interval);
         }
-        inflateHeart();
-        inflationNumber++;
+        if (userHeartIndex > target) {
+            deflateHeart();
+            userHeartIndex--;
+        } else if (userHeartIndex < target) {
+            inflateHeart();
+            userHeartIndex++;
+        }
     }, 50);
 }
 
@@ -271,6 +280,24 @@ function AnimatePercentChange() {
     }, 15);
 }
 
+function CheckAnswer() {
+    var regex = /heart-(\d+)\.png$/;
+    var match = heartballoon.src.match(regex);
+    var userHeartIndex = match ? parseInt(match[1], 10) : 1;
+    var userPercent = userHeartIndex * 5;
+    var correctPercent = percentNumber;
+    var lowerBound = correctPercent - 10;
+    var upperBound = correctPercent + 10;
+
+    if (userPercent > lowerBound && userPercent < upperBound) {
+        correct.style.display = "block";
+        correctimage.style.display = "block";
+    } else {
+        wrong.style.display = "block";
+        wrongimage.style.display = "block";
+    }
+}
+
 function ResetAnswersOnNext() {
     correct.style.display = "none";
     correct.style.opacity = 1;
@@ -290,7 +317,7 @@ function ResetAnswersOnNext() {
 function KayleeReaction() {
     if (percentNumber >= 80) {
         reaction.src = "../assets/kaylee/lovekaylee.png";
-    } else if (percentNumber <= 15) {
+    } else if (percentNumber <= 12) {
         reaction.src = "../assets/kaylee/angrykaylee.png";
     } else if (percentNumber >= 50) {
         reaction.src = "../assets/kaylee/contentkaylee.png";

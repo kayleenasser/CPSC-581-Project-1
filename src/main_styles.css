@@ -28,7 +28,6 @@
     align-self: center;
     align-content: center;
     align-items: center;
-    margin: 5px;
   }
 
   .column {
@@ -70,8 +69,8 @@
     border: none;
     color: white;
     margin: 10px;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 400px;
+    max-width: 600px;
     padding: 12px;
     text-align: center;
     border-radius: 16%;
@@ -103,8 +102,8 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    margin-top: 60px;
-    margin-bottom: 25px;
+    margin-top: 40px;
+    margin-bottom: 15px;
   }
 
   .left-chat-bubble{

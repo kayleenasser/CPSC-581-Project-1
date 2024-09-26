@@ -108,6 +108,10 @@ let percentNumber = 0;
 let inflationNumber = 0;
 let isRunning = false;
 
+window.onload = function() {
+    updateDisplay();
+  };
+
 var reaction = document.getElementById("reaction");
 var inflate = document.getElementById("inflate");
 var deflate = document.getElementById("deflate");
@@ -157,11 +161,11 @@ function SwitchTools() {
     } else if (deflate.style.display === "inline-block") {
         deflate.style.display = "none";
         next.style.display = "inline-block";
-    } else if (next.style.display === "inline-block") {
+    } else if (next.style.display === "inline-block" && percent.style.display === "none") {
         next.style.display = "none";
         inflate.style.display = "inline-block";
     } else {
-        console.log("SwitchTools error");
+        console.log("Cannot switch tools until you move to the next question");
     }
 }
 
@@ -204,10 +208,6 @@ function deflateHeart() {
     }
 }
 
-window.onload = function() {
-    updateDisplay();
-  };
-
 function updateDisplay() {
     const keys = Object.keys(data);
 
@@ -240,32 +240,6 @@ function AnimatePercentChange() {
         starting_percent++;
     }, 15);
 }
-
-// ----- No reaction for 50% reactions as its a neutral reaction (do we want a neutral reaction?) ------
-function LikeGuessed() {
-    if (percentNumber > 50) {
-        correct.style.display = "block";
-        correctimage.style.display = "block";
-        correctSound.play();
-    } else if (percentNumber < 50) {
-        wrong.style.display = "block";
-        wrongimage.style.display = "block";
-        wrongSound.play();
-    }
-};
-
-function DislikeGuessed() {
-    if (percentNumber < 50) {
-        correct.style.display = "block";
-        correctimage.style.display = "block";
-        correctSound.play();
-
-    } else if (percentNumber > 50) {
-        wrong.style.display = "block";
-        wrongimage.style.display = "block";
-        wrongSound.play();
-    }
-};
 
 function ResetAnswersOnNext() {
     correct.style.display = "none";

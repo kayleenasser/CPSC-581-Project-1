@@ -9,6 +9,11 @@
 	border-color: white;
 	align-content: center;
 	align-items: center;
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
 }
 
 .image-content .picture {
@@ -28,6 +33,11 @@
 	text-align: center;
 	position: relative;
 	z-index: 2;
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
 }
 
 .balloon-heart {

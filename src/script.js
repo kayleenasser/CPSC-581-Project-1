@@ -1,4 +1,34 @@
 const data = {
+    "Litter Boxes": {
+        "fact": "Cats are very clean animals, and they will stop using a dirty litter box! Got to keep it clean :)",
+        "opinion": "I have a cat, and I don't like cleaning it, but I am glad she uses it!",
+        "percent": "40",
+        "image": "../assets/litterbox.png"
+    },
+    "Pork": {
+        "fact": "Pork is the most widely eaten meat in the world!",
+        "opinion": "I really don't like pork. I think it smells bad and it makes me sick when I eat it.",
+        "percent": "3",
+        "image": "../assets/pork.png"
+    },
+    "Public Restrooms": {
+        "fact": "The first toilet cubeicle is typically the least used!",
+        "opinion": "I think there should be more! Nothing worse than being out and about and not being able to find a bathroom.",
+        "percent": "60",
+        "image": "../assets/publictoilet.png"
+    },
+    "Styrofoam": {
+        "fact": "You can't recycle it....",
+        "opinion": "They're good for shipping things, but I hate the sound they make when they rub together. I hate unpacking things with styrofoam.",
+        "percent": "13",
+        "image": "../assets/styrofoam.png"
+    },
+    "Workplace Injury": {
+        "fact": "Overexertion is one of the main causes of workplace injuries! Take it easy, you don't owe your company your health!",
+        "opinion": "...I got a concussion at work once, sooo definitely not a fan of workplace injuries.",
+        "percent": "9",
+        "image": "../assets/workplaceouch.png"
+    },
     "Ripe Fruit": {
         "fact": "Apples, peaches and raspberries are all members of the rose family!!",
         "opinion": "Nothing is better than a perfectly ripe peach in the summer. I'm a fan of MOST ripe fruit.",

@@ -106,6 +106,7 @@ const data = {
 let selectedItems = [];
 let percentNumber = 0;
 let inflationNumber = 0;
+let isRunning = false;
 
 var reaction = document.getElementById("reaction");
 var inflate = document.getElementById("inflate");
@@ -128,20 +129,24 @@ var heartballoon = document.getElementById("heartballoon");
 wrongSound.volume = 0.5;
 
 function HeartBalloonButton() {
-    if (inflate.style.display === "inline-block") {
+    if (isRunning) {
+        console.log("isRunning is true, returning");
+        return;
+    } else if (inflate.style.display === "inline-block") {
         inflateHeart();
     } else if (deflate.style.display === "inline-block") {
         deflateHeart();
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
-        displayResults();
         KayleeReaction();
+        next.innerText = "click the heart to continue";
+        displayResults();
     } else if (next.style.display === "inline-block" && percent.style.display === "block") {
         updateDisplay();
         ResetAnswersOnNext();
+        next.innerText = "check response!"
     }
     else {
         console.log("HeartBalloonButton error");
-        console.log("inflate:", inflate.style.display, "deflate:", deflate.style.display, "next:", next.style.display, "percent:", percent.style.display);
     }
 }
 
@@ -165,6 +170,7 @@ function displayResults() {
     fact.style.display = "none";
     opinion.style.display = "block";
     percent.style.display = "block";
+    disableButtons();
     AnimatePercentChange();
 }
 
@@ -198,19 +204,6 @@ function deflateHeart() {
     }
 }
 
-function disableButtons() {
-    inflate.disabled = true;
-    deflate.disabled = true;
-    next.disabled = true;
-}
-
-function enableButtons() {
-    inflate.disabled = false;
-    deflate.disabled = false;
-    prompt.disabled = false;
-    next.disabled = false;
-}
-
 window.onload = function() {
     updateDisplay();
   };
@@ -239,7 +232,7 @@ function AnimatePercentChange() {
     var target = parseInt(percent.innerText, 10);
     var starting_percent = 0;
     var interval = setInterval(function() {
-        if (starting_percent > target) {
+        if (starting_percent >= target) {
             clearInterval(interval);
             enableButtons();
         }
@@ -281,6 +274,13 @@ function ResetAnswersOnNext() {
     wrong.style.opacity = 1;
     reaction.src = "../assets/kaylee/kaylee.png";
     percent.style.display = "none";
+    fact.style.display = "block";
+    opinion.style.display = "none";
+    inflate.style.display = "inline-block";
+    deflate.style.display = "none";
+    next.style.display = "none";
+    heartballoon.src = "../assets/heart-balloon/heart-1.png";
+    inflationNumber = 0;
 }
 
 function KayleeReaction() {
@@ -295,4 +295,18 @@ function KayleeReaction() {
     } else {
         reaction.src = "../assets/kaylee/kaylee.png";
     }
+}
+
+function disableButtons() {
+    inflate.disabled = true;
+    deflate.disabled = true;
+    next.disabled = true;
+    isRunning = true;
+}
+
+function enableButtons() {
+    inflate.disabled = false;
+    deflate.disabled = false;
+    next.disabled = false;
+    isRunning = false;
 }

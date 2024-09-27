@@ -177,15 +177,18 @@ function typeText(text, elementId, speed = 50) {
 }
 
 async function swapCursor()   {
-    if (search(cursor.src,"flate")!=0){
-        cursor.src = replace(cursor.src, ".png", ".gif");
-        await (1000);
-        cursor.src = replace(cursor.src, ".gif", ".png");
+    if (cursor.src.search("flate")!=0){
+        console.log(cursor.src);
+        cursor.src = cursor.src.replace(".png", ".gif");
+        setTimeout(function(){
+            cursor.src = cursor.src.replace(".gif", ".png");
+        }, 1040);
     } else if (cursor.src == "../assets/cursers/check.png") {
         cursor.src = "../assets/cursers/next.png"
     } else if (cursor.src == "../assets/cursers/next.png"){
         cursor.src = "../assets/cursers/inflatepump.png"
     }
+    HeartBalloonButton();
 }
 
 function HeartBalloonButton() {

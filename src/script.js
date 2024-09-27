@@ -184,7 +184,7 @@ function HeartBalloonButton() {
     } else if (deflate.style.display === "inline-block") {
         deflateHeart();
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
-        // CheckAnswer(); // Not working yet
+        CheckAnswer(); // Not working yet
         KayleeReaction();
         next.innerText = "click the heart to continue";
         displayResults();
@@ -299,16 +299,25 @@ function CheckAnswer() {
     var match = heartballoon.src.match(regex);
     var userHeartIndex = match ? parseInt(match[1], 10) : 1;
     var userPercent = userHeartIndex * 5;
+    console.log("userPercent:", userPercent);
     var correctPercent = percentNumber;
-    var lowerBound = correctPercent - 10;
-    var upperBound = correctPercent + 10;
+    console.log("correctPercent:", correctPercent);
+    var lowerBound = parseInt(correctPercent) - 10;
+    var upperBound = parseInt(correctPercent) + 10;
+    console.log("lowerBound:", lowerBound, "upperBound:", upperBound);
 
     if (userPercent > lowerBound && userPercent < upperBound) {
         correct.style.display = "block";
         correctimage.style.display = "block";
+        correct.addEventListener('animationend', () => {
+            correct.style.display = 'none';
+        });
     } else {
         wrong.style.display = "block";
         wrongimage.style.display = "block";
+        wrong.addEventListener('animationend', () => {
+            wrong.style.display = 'none';
+        });
     }
 }
 

@@ -177,18 +177,16 @@ function typeText(text, elementId, speed = 50) {
 }
 
 async function swapCursor()   {
-    if (cursor.src.search("flate")!=0){
-        console.log(cursor.src);
+    if (cursor.src.search(/flate.png/)!=-1){
         cursor.src = cursor.src.replace(".png", ".gif");
         setTimeout(function(){
             cursor.src = cursor.src.replace(".gif", ".png");
         }, 1040);
-    } else if (cursor.src == "../assets/cursers/check.png") {
+    } else if (next.style.display === "inline-block" && percent.style.display === "block"){
         cursor.src = "../assets/cursers/next.png"
-    } else if (cursor.src == "../assets/cursers/next.png"){
-        cursor.src = "../assets/cursers/inflatepump.png"
+    } else if (cursor.src.search(/next.png/)!=-1){
+        cursor.src = "../assets/cursers/inflate.png"
     }
-    HeartBalloonButton();
 }
 
 function HeartBalloonButton() {
@@ -215,7 +213,7 @@ function HeartBalloonButton() {
 
 function SwitchTools() {
     if (inflate.style.display === "inline-block") {
-        cursor.src = "../assets/cursers/deflatehand.png";
+        cursor.src = "../assets/cursers/deflate.png";
         inflate.style.display = "none";
         deflate.style.display = "inline-block";
     } else if (deflate.style.display === "inline-block") {
@@ -223,7 +221,7 @@ function SwitchTools() {
         deflate.style.display = "none";
         next.style.display = "inline-block";
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
-        cursor.src = "../assets/cursers/inflatepump.png";
+        cursor.src = "../assets/cursers/inflate.png";
         document.body.style.cursor="default";
         next.style.display = "none";
         inflate.style.display = "inline-block";

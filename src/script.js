@@ -155,11 +155,13 @@ var wrong = document.getElementById("wrong");
 var wrongimage = document.getElementById("wrong-image");
 var correct = document.getElementById("correct");
 var correctimage = document.getElementById("correct-image");
-var correctSound = document.getElementById("correctSound");
-var wrongSound = document.getElementById("wrongSound");
+var yippieSound = document.getElementById("yippieSound");
+var wompSound = document.getElementById("wompSound");
 var heartballoon = document.getElementById("heartballoon");
 
-wrongSound.volume = 0.5;
+wompSound.volume = 0.5;
+wompSound.playbackRate= 1.5;
+yippieSound.playbackRate= 1.5;
 
 function typeText(text, elementId, speed = 50) {
     let i = 0;
@@ -299,25 +301,25 @@ function CheckAnswer() {
     var match = heartballoon.src.match(regex);
     var userHeartIndex = match ? parseInt(match[1], 10) : 1;
     var userPercent = userHeartIndex * 5;
-    console.log("userPercent:", userPercent);
-    var correctPercent = percentNumber;
-    console.log("correctPercent:", correctPercent);
-    var lowerBound = parseInt(correctPercent) - 10;
-    var upperBound = parseInt(correctPercent) + 10;
-    console.log("lowerBound:", lowerBound, "upperBound:", upperBound);
+    var correctPercent = parseInt(percentNumber, 10);
+    var lowerBound = correctPercent - 10;
+    var upperBound = correctPercent + 10;
 
-    if (userPercent > lowerBound && userPercent < upperBound) {
+    console.log(`Correct Percent: ${correctPercent}`);
+    console.log(`User Percent: ${userPercent}`);
+    console.log(`Lower Bound: ${lowerBound}`);
+    console.log(`Upper Bound: ${upperBound}`);
+
+    if (userPercent >= lowerBound && userPercent <= upperBound) {
+        console.log("Answer is correct");
         correct.style.display = "block";
         correctimage.style.display = "block";
-        correct.addEventListener('animationend', () => {
-            correct.style.display = 'none';
-        });
+        yippieSound.play(); 
     } else {
+        console.log("Answer is wrong");
         wrong.style.display = "block";
         wrongimage.style.display = "block";
-        wrong.addEventListener('animationend', () => {
-            wrong.style.display = 'none';
-        });
+        wompSound.play();
     }
 }
 

@@ -177,11 +177,6 @@ function typeText(text, elementId, speed = 50) {
 }
 
 
-async function playGif(){
-    let current = cursor.src;
-    if (current)
-}
-
 function HeartBalloonButton() {
     if (isRunning) {
         console.log("isRunning is true, returning");
@@ -208,14 +203,15 @@ function HeartBalloonButton() {
 
 function SwitchTools() {
     if (inflate.style.display === "inline-block") {
-        inflate.style.display = "none";
         cursor.src = "../assets/cursers/deflatehand.png";
+        inflate.style.display = "none";
         deflate.style.display = "inline-block";
     } else if (deflate.style.display === "inline-block") {
+        cursor.src = "../assets/cursers/check.png";
         deflate.style.display = "none";
-        cursor.src = "../assets/cursers/inflatepump.png";
         next.style.display = "inline-block";
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
+        cursor.src = "../assets/cursers/inflatepump.png";
         document.body.style.cursor="default";
         next.style.display = "none";
         inflate.style.display = "inline-block";

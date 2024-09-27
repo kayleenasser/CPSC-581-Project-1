@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="cursor_style.css">
     </head>
 	<body>
+		<script>0</script>
 		<header>
 			<h2>Kaylee's Love Guesser</h2>
 			<h4>Inflate the balloon to the degree you think Kaylee likes the item!</h4>
@@ -51,18 +52,18 @@
 			</div>
 			<div class="row" style="margin-top: -1%;">
 				<div class="column">
-					<button id="inflate" onclick="SwitchTools()" style="display: inline-block;">
-						<img src="../assets/selectbutton/select_deflate.png" style="width: 180px;height: 135px;">
+					<button id="inflate" onclick="SwitchTools();" style="display: inline-block;">
+						<img src="../assets/selectbutton/tool-inflate.png" style="width: 400px;">
 					</button>
 				</div>				
 				<div class="column">
-					<button id="deflate" onclick="SwitchTools()" style="display: none;">
-						<img src="../assets/selectbutton/select_check.png" style="width: 180px;height: 135px;">
+					<button id="deflate" onclick="SwitchTools();" style="display: none;">
+						<img src="../assets/selectbutton/tool-deflate.png" style="width: 400px;">
 					</button>
 				</div>
 				<div class="column"></div>
-					<button id="next" onclick="SwitchTools()" style="display: none;">
-						<img src="../assets/selectbutton/select-inflate.png" style="width: 180px;height: 135px;">
+					<button id="next" onclick="SwitchTools();" style="display: none;">
+						<img src="../assets/selectbutton/tool-check.png" style="width: 400px;">
 					</button>
 				</div>
 			</div>
@@ -71,7 +72,7 @@
 			<div></div>
 		</footer>
 
-		<img class="cursor" id="cursor" src="../assets/cursers/inflatepump.png"></img>
+		<img class="cursor" id="cursor" pointer-events="none" src="../assets/cursers/inflatepump.png"></img>
 		<audio id="correctSound" src="../assets/correct.mp3" preload="auto"></audio>
         <audio id="wrongSound" src="../assets/wrong.mp3" preload="auto"></audio>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>

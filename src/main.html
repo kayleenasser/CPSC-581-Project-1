@@ -6,6 +6,7 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="main_styles.css">
 		<link rel="stylesheet" href="image_styles.css">
+		<link rel="stylesheet" href="cursor_style.css">
     </head>
 	<body>
 		<header>
@@ -50,13 +51,19 @@
 			</div>
 			<div class="row" style="margin-top: -1%;">
 				<div class="column">
-					<button id="inflate" onclick="SwitchTools();" style="display: inline-block;">inflate the balloon!</button>
+					<button id="inflate" onclick="SwitchTools()" style="display: inline-block;">
+						<img src="../assets/selectbutton/select_deflate.png" style="width: 180px;height: 135px;">
+					</button>
 				</div>				
 				<div class="column">
-					<button id="deflate" onclick="SwitchTools()" style="display: none;">deflate the balloon!</button>
+					<button id="deflate" onclick="SwitchTools()" style="display: none;">
+						<img src="../assets/selectbutton/select_check.png" style="width: 180px;height: 135px;">
+					</button>
 				</div>
 				<div class="column"></div>
-					<button id="next" onclick="SwitchTools()" style="display: none;">check response!</button>
+					<button id="next" onclick="SwitchTools()" style="display: none;">
+						<img src="../assets/selectbutton/select-inflate.png" style="width: 180px;height: 135px;">
+					</button>
 				</div>
 			</div>
 		</div>
@@ -64,9 +71,11 @@
 			<div></div>
 		</footer>
 
+		<img class="cursor" id="cursor" src="../assets/cursers/inflatepump.png"></img>
 		<audio id="correctSound" src="../assets/correct.mp3" preload="auto"></audio>
         <audio id="wrongSound" src="../assets/wrong.mp3" preload="auto"></audio>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+		<script src="cursor_script.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>

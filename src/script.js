@@ -158,6 +158,7 @@ var correctimage = document.getElementById("correct-image");
 var correctSound = document.getElementById("correctSound");
 var wrongSound = document.getElementById("wrongSound");
 var heartballoon = document.getElementById("heartballoon");
+var cursor = document.getElementById("cursor");
 
 wrongSound.volume = 0.5;
 
@@ -173,6 +174,12 @@ function typeText(text, elementId, speed = 50) {
         }
     }
     typeNextChar(); 
+}
+
+
+async function playGif(){
+    let current = cursor.src;
+    if (current)
 }
 
 function HeartBalloonButton() {
@@ -198,14 +205,18 @@ function HeartBalloonButton() {
     }
 }
 
+
 function SwitchTools() {
     if (inflate.style.display === "inline-block") {
         inflate.style.display = "none";
+        cursor.src = "../assets/cursers/deflatehand.png";
         deflate.style.display = "inline-block";
     } else if (deflate.style.display === "inline-block") {
         deflate.style.display = "none";
+        cursor.src = "../assets/cursers/inflatepump.png";
         next.style.display = "inline-block";
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
+        document.body.style.cursor="default";
         next.style.display = "none";
         inflate.style.display = "inline-block";
     } else {

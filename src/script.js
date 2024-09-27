@@ -176,6 +176,17 @@ function typeText(text, elementId, speed = 50) {
     typeNextChar(); 
 }
 
+async function swapCursor()   {
+    if (search(cursor.src,"flate")!=0){
+        cursor.src = replace(cursor.src, ".png", ".gif");
+        await (1000);
+        cursor.src = replace(cursor.src, ".gif", ".png");
+    } else if (cursor.src == "../assets/cursers/check.png") {
+        cursor.src = "../assets/cursers/next.png"
+    } else if (cursor.src == "../assets/cursers/next.png"){
+        cursor.src = "../assets/cursers/inflatepump.png"
+    }
+}
 
 function HeartBalloonButton() {
     if (isRunning) {
@@ -188,12 +199,10 @@ function HeartBalloonButton() {
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
         CheckAnswer(); // Not working yet
         KayleeReaction();
-        next.innerText = "click the heart to continue";
         displayResults();
     } else if (next.style.display === "inline-block" && percent.style.display === "block") {
         updateDisplay();
         ResetAnswersOnNext();
-        next.innerText = "check response!"
     }
     else {
         console.log("HeartBalloonButton error");

@@ -319,24 +319,26 @@ function CheckAnswer() {
     var userHeartIndex = match ? parseInt(match[1], 10) : 1;
     var userPercent = userHeartIndex * 5;
     var correctPercent = parseInt(percentNumber, 10);
-    var lowerBound = correctPercent - 10;
-    var upperBound = correctPercent + 10;
+    var lowerBound = parseInt(correctPercent) - 10;
+    var upperBound = parseInt(correctPercent) + 10;
 
     console.log(`Correct Percent: ${correctPercent}`);
     console.log(`User Percent: ${userPercent}`);
     console.log(`Lower Bound: ${lowerBound}`);
     console.log(`Upper Bound: ${upperBound}`);
 
-    if (userPercent >= lowerBound && userPercent <= upperBound) {
-        console.log("Answer is correct");
+    if (userPercent > lowerBound && userPercent < upperBound) {
         correct.style.display = "block";
         correctimage.style.display = "block";
-        yippieSound.play(); 
+        correct.addEventListener('animationend', () => {
+            correct.style.display = 'none';
+        });
     } else {
-        console.log("Answer is wrong");
         wrong.style.display = "block";
         wrongimage.style.display = "block";
-        wompSound.play();
+        wrong.addEventListener('animationend', () => {
+            wrong.style.display = 'none';
+        });
     }
 }
 

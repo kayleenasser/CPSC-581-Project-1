@@ -104,8 +104,8 @@
     justify-content: flex-start;
     position: relative; 
     margin-top: -10px;
-    margin-bottom: 20px;
-    margin-left: -400px;
+    margin-bottom: 30px;
+    margin-left: -100px;
   }
 
   .chat-bubble {
@@ -113,14 +113,14 @@
     border: 2px solid #ff69b4; 
     border-radius: 15px;
     padding: 15px;
-    width: 400px; 
+    width: 700px; 
     font-family: Arial, sans-serif;
     position: relative;
     font-size: 1.1em;
     word-wrap: break-word; 
     height: auto; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 10; 
+    z-index: 1; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,7 +133,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #333;
     padding: 10px;
-    max-width: 400px;
     position: relative;
     text-align: left;
     margin: 10px;

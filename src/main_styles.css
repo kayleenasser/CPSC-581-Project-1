@@ -105,7 +105,6 @@
     position: relative; 
     margin-top: -10px;
     margin-bottom: 30px;
-    margin-left: -100px;
   }
 
   .chat-bubble {
@@ -113,7 +112,7 @@
     border: 2px solid #ff69b4; 
     border-radius: 15px;
     padding: 15px;
-    width: 700px; 
+    width: 855px; 
     font-family: CarvingSoft;
     position: relative;
     font-size: 1.1em;
@@ -134,11 +133,9 @@
     color: #333;
     padding: 10px;
     position: relative;
-    text-align: left;
-    margin: 10px;
+    text-align: center;
     word-wrap: break-word;
     font-size: larger;
-    margin: 0;
   }
 
   .chat-bubble::after {

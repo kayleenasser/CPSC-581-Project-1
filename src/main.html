@@ -6,8 +6,10 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="main_styles.css">
 		<link rel="stylesheet" href="image_styles.css">
+		<link rel="stylesheet" href="cursor_style.css">
     </head>
 	<body>
+		<script>0</script>
 		<header>
 			<h2>Kaylee's Love Guesser</h2>
 			<h4>Inflate the balloon to the degree you think Kaylee likes the item!</h4>
@@ -50,13 +52,11 @@
 			</div>
 			<div class="row" style="margin-top: -1%;">
 				<div class="column">
-					<button id="inflate" onclick="SwitchTools();" style="display: inline-block;">inflate the balloon!</button>
-				</div>				
-				<div class="column">
-					<button id="deflate" onclick="SwitchTools()" style="display: none;">deflate the balloon!</button>
-				</div>
-				<div class="column"></div>
-					<button id="next" onclick="SwitchTools()" style="display: none;">check response!</button>
+					<div class="button-container">
+						<img onclick="SwitchTools();" style="display: inline-block;" src="../assets/selectbutton/tool-inflate.png" class="switchtool-button" id="inflate">
+						<img onclick="SwitchTools();" style="display: none;" src="../assets/selectbutton/tool-deflate.png" class="switchtool-button" id="deflate">
+						<img onclick="SwitchTools();" style="display: none;" src="../assets/selectbutton/tool-check.png" class="switchtool-button" id="next">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -64,9 +64,11 @@
 			<div></div>
 		</footer>
 
+		<img class="cursor" id="cursor" pointer-events="none" src="../assets/cursers/inflatepump.png"></img>
 		<audio id="wompSound" src="../assets/Womp.mp3" preload="auto"></audio>
         <audio id="yippieSound" src="../assets/Yippee.mp3" preload="auto"></audio>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+		<script src="cursor_script.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>

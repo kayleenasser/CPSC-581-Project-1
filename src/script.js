@@ -158,6 +158,7 @@ var correctimage = document.getElementById("correct-image");
 var yippieSound = document.getElementById("yippieSound");
 var wompSound = document.getElementById("wompSound");
 var heartballoon = document.getElementById("heartballoon");
+var cursor = document.getElementById("cursor");
 
 wompSound.volume = 0.5;
 wompSound.playbackRate= 1.5;
@@ -176,6 +177,7 @@ function typeText(text, elementId, speed = 50) {
     }
     typeNextChar(); 
 }
+
 
 function HeartBalloonButton() {
     if (isRunning) {
@@ -200,14 +202,19 @@ function HeartBalloonButton() {
     }
 }
 
+
 function SwitchTools() {
     if (inflate.style.display === "inline-block") {
+        cursor.src = "../assets/cursers/deflatehand.png";
         inflate.style.display = "none";
         deflate.style.display = "inline-block";
     } else if (deflate.style.display === "inline-block") {
+        cursor.src = "../assets/cursers/check.png";
         deflate.style.display = "none";
         next.style.display = "inline-block";
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
+        cursor.src = "../assets/cursers/inflatepump.png";
+        document.body.style.cursor="default";
         next.style.display = "none";
         inflate.style.display = "inline-block";
     } else {

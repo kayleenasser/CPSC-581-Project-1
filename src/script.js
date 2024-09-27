@@ -330,12 +330,14 @@ function CheckAnswer() {
     if (userPercent > lowerBound && userPercent < upperBound) {
         correct.style.display = "block";
         correctimage.style.display = "block";
+        yippieSound.play(); 
         correct.addEventListener('animationend', () => {
             correct.style.display = 'none';
         });
     } else {
         wrong.style.display = "block";
         wrongimage.style.display = "block";
+        wompSound.play();
         wrong.addEventListener('animationend', () => {
             wrong.style.display = 'none';
         });

@@ -2,7 +2,7 @@
 ## A Tale of Two Buttons - CPSC 581
 ### Kaylee Nasser, Caitlin McConnery, and Abdullah Ishtiaq
 
-"Kaylee's Love Guesser" is an interactive web application where users can guess how much Kaylee likes a particular item by inflating or deflating a heart balloon. This was the result of our attempt to fulfill an assignment task of creating an application made up of only two buttons that represented one of our groupmates. 
+"Kaylee's Love Guesser" is a web application where users can guess how much Kaylee likes a particular item by inflating or deflating a heart balloon. This was the result of our attempt to fulfill an assignment task of creating an application made up of only two buttons that represented one of our groupmates. 
 The two buttons are as follows:
 1. A button to toggle the tool the user wields
 2. The interactable heart balloon

@@ -4,9 +4,9 @@
 		<title>Kaylee's Love Guesser</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="main_styles.css">
-		<link rel="stylesheet" href="image_styles.css">
-		<link rel="stylesheet" href="cursor_style.css">
+		<link rel="stylesheet" href="./src/main_styles.css">
+		<link rel="stylesheet" href="./src/image_styles.css">
+		<link rel="stylesheet" href="./src/cursor_style.css">
     </head>
 	<body>
 		<script>0</script>
@@ -17,25 +17,25 @@
 		<div class="main-container">
 			<div id="correct" class="popup">
 				<div id="correct-image" class="popup-content">
-					<img src="../assets/correct.png" alt="correct">
+					<img src="./assets/correct.png" alt="correct">
 				</div>
 			</div>
 			<div id="wrong" class="popup">
 				<div id="wrong-image" class="popup-content">
-					<img src="../assets/wrong.png" alt="wrong">
+					<img src="./assets/wrong.png" alt="wrong">
 				</div>
 			</div>
 			<div class="row" style="margin-top: -30px;">
 				<div class="column">
 					<div class="image-content">
-						<img id="reaction" src="../assets/kaylee/kaylee.png" alt="kaylee doodle" class="picture">
+						<img id="reaction" src="./assets/kaylee/kaylee.png" alt="kaylee doodle" class="picture">
 					</div>
 					<figcaption> Kaylee </figcaption>
 				</div>
 				<div class="column" style="margin-top: 40px; width: 450px;">
 					<div class="heart" id="heart">
-						<img src="../assets/heart.png" class="underheart" id="empty-heart">
-						<img src="../assets/heart-balloon/heart-1.png" onclick="HeartBalloonButton();swapCursor();" class="picture" alt="heartballoon" id="heartballoon">
+						<img src="./assets/heart.png" class="underheart" id="empty-heart">
+						<img src="./assets/heart-balloon/heart-1.png" onclick="HeartBalloonButton();swapCursor();" class="picture" alt="heartballoon" id="heartballoon">
 						<div class="percent" id="percent" style="display: none;"></div>
 					</div>
 				</div>
@@ -53,10 +53,10 @@
 			<div class="row" style="margin-top: -1%;">
 				<div class="column">
 					<div class="button-container">
-						<img onclick="SwitchTools();" style="display: inline-block;" src="../assets/selectbutton/tool-inflate.png" class="switchtool-button" id="inflate">
-						<img onclick="SwitchTools();" style="display: none;" src="../assets/selectbutton/tool-deflate.png" class="switchtool-button" id="deflate">
-						<img onclick="SwitchTools();" style="display: none;" src="../assets/selectbutton/tool-check.png" class="switchtool-button" id="next">
-						<img onclick="SwitchTools();" style="display: none;" src="../assets/selectbutton/tool-disabled.png" class="switchtool-button" id="disabled">
+						<img onclick="SwitchTools();" style="display: inline-block;" src="./assets/selectbutton/tool-inflate.png" class="switchtool-button" id="inflate">
+						<img onclick="SwitchTools();" style="display: none;" src="./assets/selectbutton/tool-deflate.png" class="switchtool-button" id="deflate">
+						<img onclick="SwitchTools();" style="display: none;" src="./assets/selectbutton/tool-check.png" class="switchtool-button" id="next">
+						<img onclick="SwitchTools();" style="display: none;" src="./assets/selectbutton/tool-disabled.png" class="switchtool-button" id="disabled">
 					</div>
 				</div>
 			</div>
@@ -65,14 +65,14 @@
 			<div></div>
 		</footer>
 
-		<img class="cursor" id="cursor" pointer-events="none" src="../assets/cursers/inflate.png"></img>
-		<audio id="wompSound" src="../assets/Womp.mp3" preload="auto"></audio>
-        <audio id="yippieSound" src="../assets/Yippee.mp3" preload="auto"></audio>
+		<img class="cursor" id="cursor" pointer-events="none" src="./assets/cursers/inflate.png"></img>
+		<audio id="wompSound" src="./assets/Womp.mp3" preload="auto"></audio>
+        <audio id="yippieSound" src="./assets/Yippee.mp3" preload="auto"></audio>
 		<audio id="background-music" autoplay loop >
-			<source src="../assets/glorp.mp3" type="audio/mpeg">
+			<source src="./assets/glorp.mp3" type="audio/mpeg">
 		</audio>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
-		<script src="cursor_script.js"></script>
-		<script src="script.js"></script>
+		<script src="./src/cursor_script.js"></script>
+		<script src="./src/script.js"></script>
 	</body>
 </html>

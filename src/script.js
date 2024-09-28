@@ -145,6 +145,7 @@ var reaction = document.getElementById("reaction");
 var inflate = document.getElementById("inflate");
 var deflate = document.getElementById("deflate");
 var next = document.getElementById("next");
+var disabled = document.getElementById("disabled");
 var percent = document.getElementById("percent");
 var prompt = document.getElementById("prompt");
 var item = document.getElementById("name");
@@ -184,11 +185,11 @@ async function swapCursor()   {
         setTimeout(function(){
             cursor.src = cursor.src.replace(".gif", ".png");
         }, 1040);
-    } else if (next.style.display === "inline-block" && percent.style.display === "block"){
-        cursor.src = "../assets/cursers/next.png"
     } else if (cursor.src.search(/next.png/)!=-1){
         cursor.src = "../assets/cursers/inflate.png"
-    }
+    }else if (percent.style.display === "block"){
+        cursor.src = "../assets/cursers/next.png"
+    } 
 }
 
 function HeartBalloonButton() {
@@ -200,10 +201,12 @@ function HeartBalloonButton() {
     } else if (deflate.style.display === "inline-block") {
         deflateHeart();
     } else if (next.style.display === "inline-block" && percent.style.display === "none") {
-        CheckAnswer(); // Not working yet
+        next.style.display = "none";
+        disabled.style.display ="inline-block";
+        CheckAnswer();
         KayleeReaction();
         displayResults();
-    } else if (next.style.display === "inline-block" && percent.style.display === "block") {
+    } else if (disabled.style.display === "inline-block" && percent.style.display === "block") {
         updateDisplay();
         ResetAnswersOnNext();
     }
@@ -345,6 +348,8 @@ function CheckAnswer() {
 }
 
 function ResetAnswersOnNext() {
+    disabled.style.display = "none";
+    inflate.style.display = "inline-block";
     correct.style.display = "none";
     correct.style.opacity = 1;
     wrong.style.display = "none";

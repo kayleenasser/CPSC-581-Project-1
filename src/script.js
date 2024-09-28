@@ -160,8 +160,9 @@ var yippieSound = document.getElementById("yippieSound");
 var wompSound = document.getElementById("wompSound");
 var heartballoon = document.getElementById("heartballoon");
 var cursor = document.getElementById("cursor");
+var music = document.getElementById("background-music");
 
-wompSound.volume = 0.5;
+wompSound.volume = 0.3;
 wompSound.playbackRate= 1.5;
 yippieSound.playbackRate= 1.5;
 
@@ -240,6 +241,7 @@ function displayResults() {
     fact.style.display = "none";
     opinion.style.display = "block";
     percent.style.display = "block";
+    typeText(opinion.innerText, "opinion", 20);
     disableButtons();
     AnimatePercentChange();
 }
@@ -393,3 +395,13 @@ function enableButtons() {
     isRunning = false;
 }
 
+function playMusic() {
+    music.play();
+    music.volume = 0.05; 
+}
+
+document.addEventListener('click', function() {
+    if (music.paused) {
+        playMusic();
+    }
+}, { once: true });
